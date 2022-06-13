@@ -20,10 +20,14 @@ describe("register", () => {
     cy.get("#resultado").should("have.not.text", "Voltou!");
   });
 
-  it("assert title ", () => {
+  it.only("assert title ", () => {
     cy.title()
       .should("be.equal", "Campo de Treinamento")
       .and("contain", "Campo de Treinamento");
+
+    cy.title().then((title) => {
+      console.log(title);
+    });
   });
 
   it("should fill in the fields name, last name, gender, fav food, scholarity, practice sports and suggestions", () => {
@@ -67,19 +71,18 @@ describe("register", () => {
         "have.value",
         "Esse é um exemplo, esse é um exemplo. Esse é um exemplo, esse é um exemplo 2"
       );
-      
-      //Button,	Checkbox,	Radio and	Input on Table  
+
+    //Button,	Checkbox,	Radio and	Input on Table
     cy.get(
       "#tabelaUsuarios > tbody > tr:nth-child(1) > td:nth-child(4) > input[type=checkbox]"
-      ).check();
-      cy.get(
-        ":nth-child(1) > :nth-child(5) > table > tbody > tr > td > input"
-        ).check();
-        cy.get(
-          "#tabelaUsuarios > :nth-child(2) > :nth-child(1) > :nth-child(6) > input"
-          ).type("teste Input");
-          
-          cy.get("#formCadastrar").click();
-        });
-  
+    ).check();
+    cy.get(
+      ":nth-child(1) > :nth-child(5) > table > tbody > tr > td > input"
+    ).check();
+    cy.get(
+      "#tabelaUsuarios > :nth-child(2) > :nth-child(1) > :nth-child(6) > input"
+    ).type("teste Input");
+
+    cy.get("#formCadastrar").click();
+  });
 });

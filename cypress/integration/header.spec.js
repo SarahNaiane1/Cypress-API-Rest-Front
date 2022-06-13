@@ -14,4 +14,21 @@ describe("register", () => {
     cy.get("#novoCampo").should("exist");
     cy.get("#novoCampo").type("Funciona");
   });
+
+  it("list DOM", () => {
+    cy.get("#buttonListDOM").click();
+    cy.wait(5000);
+    cy.get("#lista li").find("span").contains("Item 1");
+    cy.get("#lista li span").should("contain", "Item 2");
+  });
+
+  it("list", () => {
+    cy.get("#buttonList").click();
+    cy.get("#lista li").find("span").contains("Item 1");
+    cy.get("#lista li span").should("contain", "Item 2");
+  });
+
+  it.only("button count", () => {
+    cy.get("#buttonCount").click().click().should("have.value", "111");
+  });
 });
