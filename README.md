@@ -17,6 +17,8 @@ Tabela de Conteudo
    * [Como Usar](#como-usar)
       * [Pré-Requisitos](#pre-requisitos)
       * [Executar a Aplicação](#cypress-open)
+   * [Comandos](#comandos)
+
    * [Autora](#Autora)
 )
 
@@ -38,6 +40,25 @@ Além disto é bom ter um editor para trabalhar com o código como [VSCode](http
 ### Executar a Aplicação
 
 $ npx cypress open
+
+
+# Comandos
+- ⭐️⭐️⭐️ click
+- ⭐️⭐️⭐️ contains
+- ⭐️⭐️⭐️ get
+- ⭐️⭐️⭐️ and
+- ⭐️⭐️⭐️ then
+- ⭐️⭐️⭐️ log
+- ⭐️⭐️⭐️ type
+- ⭐️⭐️⭐️ clear
+- ⭐️⭐️⭐️ check
+- ⭐️⭐️⭐️ visit
+- ⭐️⭐️⭐️ wait
+- ⭐️⭐️⭐️ find
+- ⭐️⭐️⭐️ its
+- ⭐️⭐️⭐️ select
+- ⭐️⭐️⭐️ reload
+- ⭐️⭐️⭐️ title
 
 
 
