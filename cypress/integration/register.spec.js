@@ -20,7 +20,7 @@ describe("register", () => {
     cy.get("#resultado").should("have.not.text", "Voltou!");
   });
 
-  it.only("assert title ", () => {
+  it("assert title ", () => {
     cy.title()
       .should("be.equal", "Campo de Treinamento")
       .and("contain", "Campo de Treinamento");
@@ -30,8 +30,10 @@ describe("register", () => {
     });
   });
 
-  it("should fill in the fields name, last name, gender, fav food, scholarity, practice sports and suggestions", () => {
-    cy.get("#formNome").type("Usuario");
+  it.only("should fill in the fields name, last name, gender, fav food, scholarity, practice sports and suggestions", () => {
+    cy.get("#formNome").then($el =>{
+      cy.wrap($el).type("Usuario");
+    })
     cy.get("#formSobrenome").type(
       "Cypress Sarah{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}"
     );
@@ -59,7 +61,7 @@ describe("register", () => {
         "Esse é um exemplo, esse é um exemplo. Esse é um exemplo, esse é um exemplo"
       )
       .should(
-        "have.value",
+        "have.value", 
         "Esse é um exemplo, esse é um exemplo. Esse é um exemplo, esse é um exemplo"
       )
       .clear()

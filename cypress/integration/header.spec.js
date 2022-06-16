@@ -28,7 +28,11 @@ describe("register", () => {
     cy.get("#lista li span").should("contain", "Item 2");
   });
 
-  it.only("button count", () => {
+  it("button count", () => {
     cy.get("#buttonCount").click().click().should("have.value", "111");
+  });
+
+  it.only("invoke", () => {
+    cy.window().invoke('alert', 'Dá para ver?')
   });
 });

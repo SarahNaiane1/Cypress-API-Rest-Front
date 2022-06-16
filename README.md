@@ -59,6 +59,8 @@ $ npx cypress open
 - ⭐️⭐️⭐️ select
 - ⭐️⭐️⭐️ reload
 - ⭐️⭐️⭐️ title
+- ⭐️⭐️⭐️ wrap
+
 
 
 
