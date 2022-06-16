@@ -31,9 +31,9 @@ describe("register", () => {
   });
 
   it.only("should fill in the fields name, last name, gender, fav food, scholarity, practice sports and suggestions", () => {
-    cy.get("#formNome").then($el =>{
+    cy.get("#formNome").then(($el) => {
       cy.wrap($el).type("Usuario");
-    })
+    });
     cy.get("#formSobrenome").type(
       "Cypress Sarah{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}"
     );
@@ -54,6 +54,15 @@ describe("register", () => {
       .select("Especializacao")
       .should("have.value", "especializacao");
 
+    cy.get("[data-test=dataEscolaridade] option").should("have.length", 8);
+    cy.get("[data-test=dataEscolaridade] option").then(($arr) => {
+      const values = [];
+      $arr.each(function () {
+        values.push(this.innerHTML);
+      });
+      expect(values).to.include.members(["Superior", "Mestrado", "Doutorado"]);
+    });
+
     cy.get("[data-testid=dataEsportes]").select(["natacao"]);
 
     cy.get("#elementosForm\\:sugestoes")
@@ -61,7 +70,7 @@ describe("register", () => {
         "Esse é um exemplo, esse é um exemplo. Esse é um exemplo, esse é um exemplo"
       )
       .should(
-        "have.value", 
+        "have.value",
         "Esse é um exemplo, esse é um exemplo. Esse é um exemplo, esse é um exemplo"
       )
       .clear()
@@ -85,6 +94,12 @@ describe("register", () => {
       "#tabelaUsuarios > :nth-child(2) > :nth-child(1) > :nth-child(6) > input"
     ).type("teste Input");
 
-    cy.get("#formCadastrar").click();
-  });
+    cy.get("#formCadastrar").click({ force: true });
+
+ /*    cy.on("window:alert", (msg) => {
+      console.log(msg);
+      expect(msg).to.be.equal("Tem certeza que voce eh vegetariano?");
+ */
+    });
+  
 });

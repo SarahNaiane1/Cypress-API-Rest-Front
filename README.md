@@ -60,6 +60,20 @@ $ npx cypress open
 - ⭐️⭐️⭐️ reload
 - ⭐️⭐️⭐️ title
 - ⭐️⭐️⭐️ wrap
+- ⭐️⭐️⭐️ on
+- ⭐️⭐️⭐️ as
+
+# Pontos de Atenção
+- Alert
+- Alert com Stub
+- Confirm
+- Prompt
+- Iframe
+
+
+
+
+
 
 
 
