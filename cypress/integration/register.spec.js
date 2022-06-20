@@ -94,12 +94,17 @@ describe("register", () => {
       "#tabelaUsuarios > :nth-child(2) > :nth-child(1) > :nth-child(6) > input"
     ).type("teste Input");
 
-    cy.get("#formCadastrar").click({ force: true });
-
- /*    cy.on("window:alert", (msg) => {
-      console.log(msg);
-      expect(msg).to.be.equal("Tem certeza que voce eh vegetariano?");
- */
+    cy.get('#formCadastrar').click()
+ 
     });
+      it.only("using xpath", () => {
+    cy.xpath("//input[contains(@onclick, 'Francisco')]");
+    cy.xpath(
+      "//table[@id='tabelaUsuarios']//td[contains(., 'Francisco')]/..//input[@type='text']"
+    );
+    cy.xpath(
+      "//td[contains(., 'Usuario A')]/following-sibling::td[contains(., 'Mestrado')]/..//input[@type='text']"
+    ).type("funciona");
+  });
   
 });
