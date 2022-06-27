@@ -62,6 +62,7 @@ $ npx cypress open
 - ⭐️⭐️⭐️ wrap
 - ⭐️⭐️⭐️ on
 - ⭐️⭐️⭐️ as
+  ⭐️⭐️⭐️ invoke
 
 # Pontos de Atenção
 - Alert
@@ -70,12 +71,9 @@ $ npx cypress open
 - Prompt
 - Iframe
 - xpath
-
-
-
-
-
-
+- Clock
+- Each
+-  Testes dinâmicos
 
 # Autora
 
